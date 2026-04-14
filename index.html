@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早稲田納骨堂 LPワイヤーフレーム v2</title>
+    <style>
+        :root {
+            --primary: #4a5568;
+            --secondary: #718096;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --text-main: #2d3748;
+            --accent: #333333;
+            --accent-sub: #5a6a7a;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        .placeholder-img {
+            background-color: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* FV */
+        .fv {
+            background-color: var(--bg-light);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .fv h1 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .fv p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: #fff;
+            color: var(--accent);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid var(--accent);
+        }
+
+        /* Features */
+        .features-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        /* SP専用改行：PCでは非表示、SPで改行 */
+        .sp-br { display: none; }
+
+        @media (max-width: 768px) {
+            .sp-br { display: inline; }
+
+            /* PCだけの改行を非表示 */
+            .pc-br { display: none; }
+
+            /* 全体 */
+            section { padding: 45px 0; }
+            .container { padding: 0 16px; }
+
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 30px;
+                line-height: 1.5;
+            }
+
+            /* FV */
+            .fv { padding: 80px 16px 50px !important; }
+
+            .fv h1 {
+                font-size: 22px;
+                line-height: 1.6;
+            }
+
+            .fv p {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .features-grid {
+                flex-direction: column;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn,
+            .cta-buttons .btn-secondary {
+                width: 100%;
+                max-width: 320px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 15px !important;
+            }
+
+            /* Mobile Comparison Table */
+            .sp-table-stack {
+                overflow-x: visible !important;
+            }
+
+            .sp-table-stack table {
+                min-width: 100% !important;
+                border: none;
+            }
+
+            .sp-table-stack thead {
+                display: none;
+            }
+
+            .sp-table-stack tbody,
+            .sp-table-stack tr,
+            .sp-table-stack td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .sp-table-stack tr {
+                margin-bottom: 25px;
+                border: 2px solid var(--border);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .sp-table-stack td {
+                padding: 15px !important;
+                border: none;
+            }
+
+            .sp-table-stack td:nth-child(1) {
+                background: var(--bg-light);
+                text-align: center;
+                border-bottom: 1px dashed var(--border);
+                font-size: 16px !important;
+            }
+
+            .sp-table-stack td:nth-child(2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .sp-table-stack td:nth-child(2)::before {
+                content: "【一般的な都心の納骨堂】";
+                display: block;
+                font-size: 11px;
+                font-weight: bold;
+                color: var(--secondary);
+                margin-bottom: 5px;
+            }
+
+            .sp-table-stack td:nth-child(3)::before {
+                content: "【早稲田納骨堂】";
+                display: block;
+                font-size: 11px;
+                font-weight: bold;
+                color: var(--primary);
+                margin-bottom: 5px;
+            }
+
+            /* 問題提起セクション */
+            .problem-heading {
+                font-size: 22px !important;
+                line-height: 1.5;
+            }
+
+            .problem-list {
+                font-size: 15px !important;
+                line-height: 2 !important;
+            }
+
+            .problem-resolve {
+                font-size: 18px !important;
+            }
+
+            /* 費用プラン */
+            .pricing-box {
+                padding: 20px !important;
+            }
+
+            .price {
+                font-size: 30px;
+            }
+
+            /* 龍善寺紹介 - 住職メッセージ */
+            .temple-message {
+                padding: 20px !important;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .temple-message .placeholder-img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            .temple-message > div:last-child {
+                text-align: left;
+                min-width: 100% !important;
+            }
+
+            /* ギャラリーキャプション */
+            .gallery-caption {
+                padding: 15px 18px;
+            }
+
+            .gallery-caption h3 {
+                font-size: 16px;
+            }
+
+            .gallery-caption p {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+            /* レビューカード */
+            .review-card {
+                padding: 16px;
+            }
+
+            .review-card p:last-child {
+                font-size: 14px !important;
+                line-height: 1.7;
+            }
+
+            /* FAQ */
+            .faq-q {
+                font-size: 15px;
+                line-height: 1.6;
+                padding: 12px;
+            }
+
+            .faq-a {
+                font-size: 14px !important;
+                line-height: 1.7;
+                padding: 12px;
+            }
+
+            /* フッターCTA */
+            .cta-section h2 {
+                font-size: 20px !important;
+                line-height: 1.5;
+            }
+
+            .cta-section .cta-buttons a {
+                padding: 16px 30px !important;
+                font-size: 16px !important;
+            }
+
+            /* 統計数字 */
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .stat-label {
+                font-size: 13px;
+            }
+        }
+
+        .feature-card {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        /* Pricing */
+        .pricing-box {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .price {
+            font-size: 36px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Comparison */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border);
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--bg-light);
+        }
+
+        .highlight {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        /* Reviews */
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-q {
+            font-weight: bold;
+            background: var(--bg-light);
+            padding: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .faq-a {
+            padding: 10px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Floating Header */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header-logo {
+            font-weight: bold;
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 8px;
+        }
+
+        .header-btn {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .header-btn-outline {
+            background-color: #fff;
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid var(--accent);
+        }
+
+        /* Stats */
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        /* Gallery Slider */
+        .gallery-slider {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .gallery-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .gallery-slide .placeholder-img {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .gallery-caption {
+            background: #fff;
+            padding: 20px 25px;
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .gallery-caption h3 {
+            margin: 0 0 6px;
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .gallery-caption p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        .gallery-btn {
+            position: absolute;
+            top: 200px;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            color: var(--primary);
+        }
+
+        .gallery-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .gallery-btn.prev { left: 12px; }
+        .gallery-btn.next { right: 12px; }
+
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.2s;
+        }
+
+        .gallery-dot.active {
+            background: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-slide .placeholder-img {
+                height: 250px;
+            }
+
+            .gallery-btn {
+                top: 125px;
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Fixed Header：2ボタン構成 -->
+    <header class="fixed-header">
+        <div class="header-logo">早稲田納骨堂</div>
+        <div class="header-cta">
+            <a href="https://wasedanokotsudo.jp/contact/" class="header-btn-outline">資料請求</a>
+            <a href="https://wasedanokotsudo.jp/reservation/" class="header-btn">見学予約</a>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- 1. FV：宗教ワードを排除 -->
+    <!-- ============================================ -->
+    <section class="fv" style="padding-top: 100px;">
+        <div class="container">
+            <div class="placeholder-img" style="height: 300px; margin-bottom: 30px; border-radius: 8px;">
+                [ メインビジュアル画像：明るい個室参拝室 ＋ 大型モニターに故人の写真が映る様子 ]
+            </div>
+            <h1 style="font-size: clamp(20px, 4vw, 32px);">
+                都心で叶う、<br class="sp-br">ご家族だけの静かなお参り。<br>早稲田駅から徒歩2分の<br class="sp-br">完全個室納骨堂
+            </h1>
+            <p>販売会社を通さない直接運営だから<br class="sp-br">実現できた、安心の価格と管理体制。<br>
+                家代々使えるプランが<strong>78万円</strong>から。</p>
+
+            <!-- バッジ -->
+            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;">
+                <span style="font-size: 14px; font-weight: bold; color: #fff; text-align: center; line-height: 1.5; padding: 12px 18px; background: var(--primary); border-radius: 6px;">駅から<br>徒歩2分</span>
+                <span style="font-size: 14px; font-weight: bold; color: #fff; text-align: center; line-height: 1.5; padding: 12px 18px; background: var(--primary); border-radius: 6px;">全室<br>完全個室</span>
+                <span style="font-size: 14px; font-weight: bold; color: #fff; text-align: center; line-height: 1.5; padding: 12px 18px; background: var(--primary); border-radius: 6px;">中間マージン<br>なし</span>
+            </div>
+
+            <!-- CTA 2ボタン -->
+            <div class="cta-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://wasedanokotsudo.jp/reservation/" class="btn">見学予約はこちら</a>
+                <a href="https://wasedanokotsudo.jp/contact/" class="btn-secondary">まずは資料請求</a>
+            </div>
+
+            <!-- 安心メッセージ -->
+            <p style="font-size: 13px; color: var(--secondary); margin-top: 15px;">
+                ※見学後の営業電話・メールは一切いたしません</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 2. 問題提起：宗派の不安を追加 -->
+    <!-- ============================================ -->
+    <section style="background-color: var(--primary); color: #fff; padding: 60px 20px;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <h2 class="problem-heading" style="font-size: 28px; margin-bottom: 30px;">お墓選びで、<br class="sp-br">こんなお悩みはありませんか？</h2>
+
+            <div
+                style="background-color: #fff; color: var(--text-main); padding: 30px; border-radius: 8px; text-align: left; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <ul class="problem-list" style="list-style-type: none; padding: 0; margin: 0; font-size: 18px; line-height: 2.2;">
+                    <li><strong style="color: var(--primary);">✓</strong> 「お墓が遠方で、なかなかお参りに行けない…」</li>
+                    <li><strong style="color: var(--primary);">✓</strong> 「都心で見つけたいが、費用が高額で手が出ない…」</li>
+                    <li><strong style="color: var(--primary);">✓</strong> 「周りの参拝客の目が気になり、ゆっくり偲べない…」</li>
+                    <li><strong style="color: var(--primary);">✓</strong> 「販売会社からの営業に疲れてしまった…」</li>
+                    <li><strong style="color: var(--primary);">✓</strong> 「特定の宗派じゃないと入れないのでは…」</li>
+                </ul>
+            </div>
+
+            <p class="problem-resolve" style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
+                そのお悩み、<br class="sp-br">早稲田納骨堂が解決します。
+            </p>
+            <p style="font-size: 15px; opacity: 0.85; margin: 0;">
+                宗派不問・無宗教の方も<br class="sp-br">ご利用いただけるプランをご用意しています。
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 3. 選ばれる3つの特徴 -->
+    <!-- ============================================ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">早稲田納骨堂が選ばれる3つの理由</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="placeholder-img feature-img">[ 写真：駅出口から見える外観 ]</div>
+                    <h3 style="font-size: 18px;">① 駅徒歩2分、都心でいつでも会える</h3>
+                    <p style="font-size: 14px; text-align: left; color: var(--secondary);">
+                        東京メトロ東西線「早稲田」駅から徒歩1〜2分。思い立った時にいつでもお参りいただけます。周辺は大学や公園に囲まれた、落ち着いた文教エリアです。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="placeholder-img feature-img">[ 写真：個室で家族がモニターを見ている様子 ]</div>
+                    <h3 style="font-size: 18px;">② 周りを気にしない「完全個室」</h3>
+                    <p style="font-size: 14px; text-align: left; color: var(--secondary);">
+                        参拝室はプライベートな完全個室。大型モニターで思い出の写真や音楽を流しながら、ご家族だけの空間でゆっくり故人との時間をお過ごしいただけます。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="placeholder-img feature-img">[ 写真：明るいロビー or 受付の様子 ]</div>
+                    <h3 style="font-size: 18px;">③ 中間マージンなしの安心価格</h3>
+                    <p style="font-size: 14px; text-align: left; color: var(--secondary);">
+                        販売会社を通さず、運営元が直接ご案内。中間マージンがないから実現できた納得の価格です。見学後の営業電話・メールも一切ありません。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 3.5 施設ギャラリー -->
+    <!-- ============================================ -->
+    <section style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">施設のご紹介</h2>
+            <div class="gallery-slider">
+                <button class="gallery-btn prev" onclick="galleryMove(-1)">&#10094;</button>
+                <button class="gallery-btn next" onclick="galleryMove(1)">&#10095;</button>
+                <div class="gallery-track" id="galleryTrack">
+                    <!-- Slide 1 -->
+                    <div class="gallery-slide">
+                        <div class="placeholder-img">[ 写真：参拝室の内観 ]</div>
+                        <div class="gallery-caption">
+                            <h3>参拝室（全8室・完全個室）</h3>
+                            <p>大型モニターで故人の写真や動画、音楽を流しながら、ご家族だけの空間でゆっくりお参りいただけます。</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="gallery-slide">
+                        <div class="placeholder-img">[ 写真：モニターに遺影が映っている様子 ]</div>
+                        <div class="gallery-caption">
+                            <h3>大型モニター</h3>
+                            <p>タッチパネル操作で、思い出の写真や動画をモニターに映し出せます。ビデオ登録で故人の声を聞くことも。</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="gallery-slide">
+                        <div class="placeholder-img">[ 写真：明るいロビー・待合室 ]</div>
+                        <div class="gallery-caption">
+                            <h3>ロビー・待合室</h3>
+                            <p>白を基調とした明るく清潔感のある空間。お茶のご用意もございます。お参り後もゆっくりお過ごしください。</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="gallery-slide">
+                        <div class="placeholder-img">[ 写真：ロビーの花立て・お花 ]</div>
+                        <div class="gallery-caption">
+                            <h3>お花のお供え</h3>
+                            <p>故人がお好きだったお花を自由にお供えいただけます。屋内なので長い間きれいに咲いてくれます。</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="gallery-slide">
+                        <div class="placeholder-img">[ 写真：専用駐車場 ]</div>
+                        <div class="gallery-caption">
+                            <h3>専用駐車場</h3>
+                            <p>早稲田通り沿いに専用駐車場を完備（最大12台）。車いすの方用の駐車場も境内にございます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-dots" id="galleryDots">
+                <button class="gallery-dot active" onclick="galleryGo(0)"></button>
+                <button class="gallery-dot" onclick="galleryGo(1)"></button>
+                <button class="gallery-dot" onclick="galleryGo(2)"></button>
+                <button class="gallery-dot" onclick="galleryGo(3)"></button>
+                <button class="gallery-dot" onclick="galleryGo(4)"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 4. 費用・プラン -->
+    <!-- ============================================ -->
+    <section style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">費用・プラン</h2>
+            <p class="text-center" style="margin-bottom: 30px; line-height: 1.8;">
+                檀家にならなくても<br class="sp-br">ご利用いただけます。<br>宗派を問わず、どなたでも<br class="sp-br">お選びいただける契約形式を<br class="sp-br">ご用意しています。
+            </p>
+
+            <!-- 2プラン横並び -->
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+                <div class="pricing-box" style="background: #fff; flex: 1; max-width: 400px;">
+                    <p style="margin: 0 0 5px; font-size: 13px; color: var(--secondary);">他宗派・無宗教の方向け</p>
+                    <h3 style="margin-top: 0; color: var(--primary);">一般プラン（家代々の箱）</h3>
+                    <div class="price">78<span style="font-size: 20px;">万円</span></div>
+                    <p style="color: var(--secondary); font-size: 13px;">※年間管理費が別途かかります</p>
+                    <div
+                        style="text-align: left; background: var(--bg-light); padding: 15px; border-radius: 4px; border: 1px solid var(--border); font-size: 14px;">
+                        ✔ 入る限り何名様でも納骨可能（通常3名程度）<br>
+                        ✔ 期間の定めなし、代々使える<br>
+                        ✔ 寄付の割り当てなし
+                    </div>
+                </div>
+                <div class="pricing-box" style="background: #fff; flex: 1; max-width: 400px;">
+                    <p style="margin: 0 0 5px; font-size: 13px; color: var(--secondary);">最も多いご契約プラン</p>
+                    <h3 style="margin-top: 0; color: var(--primary);">信徒プラン（家代々の箱）</h3>
+                    <div class="price">58<span style="font-size: 20px;">万円</span></div>
+                    <p style="color: var(--secondary); font-size: 13px;">※年間管理費が別途かかります</p>
+                    <div
+                        style="text-align: left; background: var(--bg-light); padding: 15px; border-radius: 4px; border: 1px solid var(--border); font-size: 14px;">
+                        ✔ 入る限り何名様でも納骨可能（通常3名程度）<br>
+                        ✔ 期間の定めなし、代々使える<br>
+                        ✔ 葬儀・法要のサポートあり
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center" style="font-size: 14px; color: var(--secondary);">
+                ※ 上記のほか「檀家プラン」もございます。詳しくは見学時にご説明いたします。</p>
+
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="https://wasedanokotsudo.jp/reservation/" class="btn" style="background-color: var(--primary);">見学予約はこちら</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 5. 比較表 -->
+    <!-- ============================================ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">他の納骨堂・お墓との比較</h2>
+            <p class="text-center">一般的な都心の納骨堂と比較した、<br class="sp-br">早稲田納骨堂ならではの強みを<br class="sp-br">ご覧ください。</p>
+            <div class="sp-table-stack" style="overflow-x: auto;">
+                <table style="min-width: 600px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">項目</th>
+                            <th style="width: 37.5%; font-weight: normal; font-size: 15px;">一般的な都心の納骨堂</th>
+                            <th style="width: 37.5%; border: 3px solid var(--accent); color: var(--accent);">早稲田納骨堂
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-size: 14px;"><strong>家族用プランの費用</strong></td>
+                            <td style="font-size: 14px; color: var(--secondary);">
+                                家族用は初期費用100〜150万円前後が多く、都心部では200万円を超えるプランもある</td>
+                            <td class="highlight">
+                                <strong>◎ 家代々で使えるプランが78万円</strong><br>
+                                <span style="font-size: 13px; color: #333; font-weight: normal;">
+                                    都心エリアの中でも、家族で持ちやすい価格設定</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;"><strong>宗派のしばり</strong></td>
+                            <td style="font-size: 14px; color: var(--secondary);">
+                                「宗教不問」としつつ、説明が抽象的で、自分が対象か分かりにくいことも</td>
+                            <td class="highlight">
+                                <strong>◎ 宗派不問・無宗教の方も対象のプランを明記</strong><br>
+                                <span style="font-size: 13px; color: #333; font-weight: normal;">
+                                    檀家・信徒・一般から選べて「自分が申し込めるか」が分かりやすい</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;"><strong>参拝空間</strong></td>
+                            <td style="font-size: 14px; color: var(--secondary);">
+                                参拝ホール型や半個室が中心で、周りの視線・物音が気になりやすい</td>
+                            <td class="highlight">
+                                <strong>◎ 全室完全個室の参拝室</strong><br>
+                                <span style="font-size: 13px; color: #333; font-weight: normal;">
+                                    大型モニターで写真や音楽を流しながら、家族だけで静かにお参りできる</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;"><strong>アクセス</strong></td>
+                            <td style="font-size: 14px; color: var(--secondary);">
+                                駅近だが、繁華街に近く人通りや車通りが多い場所も少なくない</td>
+                            <td class="highlight">
+                                <strong>◎ 東京メトロ「早稲田」駅 徒歩1〜2分</strong><br>
+                                <span style="font-size: 13px; color: #333; font-weight: normal;">
+                                    大学や公園がある落ち着いた文教エリア。専用駐車場完備（最大12台）</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;"><strong>見学後の対応</strong></td>
+                            <td style="font-size: 14px; color: var(--secondary);">
+                                見学後の電話・メールでの営業があり、急かされる印象を持つ方も</td>
+                            <td class="highlight">
+                                <strong>◎ 営業電話・メール一切なし</strong><br>
+                                <span style="font-size: 13px; color: #333; font-weight: normal;">
+                                    販売会社ではなく運営元が直接対応。ご家族のペースでじっくり検討できる</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 6. 運営寺院「龍善寺」のご紹介 -->
+    <!-- ============================================ -->
+    <section style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">運営寺院「龍善寺」のご紹介</h2>
+            <div style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
+                <div class="placeholder-img" style="flex: 1; min-width: 300px; height: 250px; border-radius: 8px;">[
+                    写真：龍善寺 本堂 または 住職 ]</div>
+                <div style="flex: 2; min-width: 300px;">
+                    <h3 style="margin-top: 0; color: var(--primary);">浄土真宗 真宗大谷派 龍善寺（本山 京都東本願寺）</h3>
+                    <p style="color: var(--secondary); line-height: 1.8;">
+                        早稲田納骨堂は、収益目的の販売会社などを通さず、歴史ある龍善寺が直接募集・運営しております。<br>そのため、適正な価格で<br class="sp-br">永代にわたる手厚いご供養をお約束いたします。<br class="sp-br">お寺が直接管理しているからこその<br class="sp-br">「安心感」が、多くの方に選ばれている理由です。
+                    </p>
+                    <div style="background: #fff; padding: 15px; border-radius: 4px; border: 1px solid var(--border); font-size: 14px; margin-top: 15px;">
+                        ✔ 資料請求・見学後の営業電話・メールは一切いたしません<br>
+                        ✔ 契約を急かすことはありません<br>
+                        ✔ ご家族のペースでじっくりご検討ください
+                    </div>
+                </div>
+            </div>
+
+            <!-- 住職メッセージ -->
+            <div class="temple-message" style="margin-top: 40px; background: #fff; border-radius: 8px; padding: 30px; border: 1px solid var(--border); display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                <div class="placeholder-img" style="width: 100px; height: 100px; border-radius: 50%; flex-shrink: 0; overflow: hidden; font-size: 12px;">
+                    住職写真
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <p style="font-weight: bold; color: var(--primary); margin: 0 0 10px;">龍善寺 住職より</p>
+                    <p style="color: var(--secondary); font-size: 15px; line-height: 1.8; margin: 0;">
+                        納骨堂選びは、大切な方を<br class="sp-br">お預けになる場所を決めることです。<br class="sp-br">大切なことだからこそ、<br class="sp-br">急いでお決めになる必要はありません。<br><br class="sp-br">まずはお気軽に見学にいらしていただき、<br class="sp-br">雰囲気や設備をご自身の目で<br class="sp-br">お確かめください。<br class="sp-br">ご家族で何度でも<br class="sp-br">お越しいただいて構いません。<br class="sp-br">ゆっくりご検討いただいたうえで、<br class="sp-br">ご縁をいただければ幸いです。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 7. ご契約者の声 -->
+    <!-- ============================================ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">ご契約者の声</h2>
+            <div class="reviews">
+                <div class="review-card">
+                    <p style="font-weight: bold; margin-top: 0; color: var(--primary);">
+                        東京都 M様</p>
+                    <p style="margin-bottom: 0; font-size: 15px;">
+                        「納骨堂の設備が整っており、管理システムもわかりやすく、また地理的に利便性が良い点で決めました。ご丁寧にご説明いただいた点も印象的でした。」
+                    </p>
+                </div>
+                <div class="review-card">
+                    <p style="font-weight: bold; margin-top: 0; color: var(--primary);">
+                        東京都板橋区 M様</p>
+                    <p style="margin-bottom: 0; font-size: 15px;">
+                        「定年時代の広告を見て視察に参りました。説明も明確で費用もリーズナブルと思い、お世話になることを決めました。」
+                    </p>
+                </div>
+                <div class="review-card">
+                    <p style="font-weight: bold; margin-top: 0; color: var(--primary);">
+                        東京都 N様</p>
+                    <p style="margin-bottom: 0; font-size: 15px;">
+                        「アクセスが便利なこと、見学時の印象がよかったこと、既契約者の知人から話を聞いてよいと思った点が決め手でした。」
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 8. FAQ（検討初期の不安に特化） -->
+    <!-- ============================================ -->
+    <section style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">よくあるご質問</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">Q. 檀家にならないと利用できませんか？</div>
+                <div class="faq-a" style="font-size: 15px; color: var(--secondary);">
+                    いいえ、檀家になる必要はありません。早稲田納骨堂には「檀家」「信徒」「一般」の3つの契約形式があり、
+                    他宗派の方・無宗教の方もご利用いただける「一般」プランをご用意しています。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q. 費用以外に、あとからかかるお金はありますか？</div>
+                <div class="faq-a" style="font-size: 15px; color: var(--secondary);">
+                    契約時の費用とは別に、年間の志納金がございます。ただし一般契約の場合は金額の定めはなく、
+                    ご負担のない範囲でお納めいただいております。寄付や特別な費用をお願いすることもございません。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q. 生前に申し込めますか？管理費はいつからかかりますか？</div>
+                <div class="faq-a" style="font-size: 15px; color: var(--secondary);">
+                    はい、生前のお申込みも承っております。生前にご契約いただいた場合でも、
+                    実際にご納骨されるまでは管理費はかからず、納骨後からのご負担となります。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q. 見学後にしつこい営業はありませんか？</div>
+                <div class="faq-a" style="font-size: 15px; color: var(--secondary);">
+                    一切ございません。資料請求・見学後に営業電話やメールを行わないことを明言しております。
+                    ご家族のペースで、じっくりご検討ください。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q. 宗派が違う、または無宗教ですが利用できますか？</div>
+                <div class="faq-a" style="font-size: 15px; color: var(--secondary);">
+                    はい、ご利用いただけます。「一般」プランは他宗派・無宗教の方を対象としており、
+                    宗教的な義務（法要の強制、寄付の割り当て等）は一切ありません。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 9. CTA（既存フォームへの誘導） -->
+    <!-- ============================================ -->
+    <section id="cta" class="cta-section" style="border-bottom: none; background-color: var(--primary); color: #fff; text-align: center;">
+        <div class="container" style="max-width: 700px;">
+            <h2 style="color: #fff; font-size: 24px; margin-bottom: 10px;">まずはお気軽に<br class="sp-br">お問い合わせください</h2>
+            <p style="opacity: 0.85; margin-bottom: 30px;">見学予約・資料請求いずれも無料です。<br class="sp-br">見学後の営業電話・メールは<br class="sp-br">一切いたしません。</p>
+            <div class="cta-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://wasedanokotsudo.jp/reservation/" class="btn"
+                    style="background-color: #fff; color: var(--primary); font-size: 18px; padding: 18px 50px;">見学予約はこちら</a>
+                <a href="https://wasedanokotsudo.jp/contact/"
+                    style="display: inline-block; background-color: transparent; color: #fff; border: 2px solid #fff; padding: 18px 50px; border-radius: 30px; text-decoration: none; font-size: 18px; font-weight: bold;">まずは資料請求</a>
+            </div>
+            <p style="font-size: 14px; opacity: 0.7; margin-top: 20px;">お電話でもお気軽にどうぞ<br class="sp-br"><strong style="font-size: 18px;">03-3209-4709</strong><br class="sp-br"><span style="font-size: 13px;">（受付 9:00〜17:00）</span></p>
+        </div>
+    </section>
+
+    <footer style="background-color: var(--primary); color: #fff; text-align: center; padding: 30px 20px;">
+        <p style="margin: 0; font-size: 14px;">&copy; 早稲田納骨堂. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JS：ギャラリースライダー -->
+    <!-- ============================================ -->
+    <script>
+        let galleryIndex = 0;
+        const track = document.getElementById('galleryTrack');
+        const dots = document.querySelectorAll('.gallery-dot');
+        const totalSlides = dots.length;
+
+        function galleryGo(i) {
+            galleryIndex = i;
+            track.style.transform = 'translateX(-' + (galleryIndex * 100) + '%)';
+            dots.forEach((d, idx) => d.classList.toggle('active', idx === galleryIndex));
+        }
+
+        function galleryMove(dir) {
+            galleryGo((galleryIndex + dir + totalSlides) % totalSlides);
+        }
+    </script>
+
+</body>
+
+</html>
