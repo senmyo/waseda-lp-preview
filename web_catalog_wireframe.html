@@ -220,16 +220,24 @@
 
     .catalog-image-wrap {
       width: 100%;
+      height: min(72vh, 720px);
+      min-height: 560px;
       border: 1px solid var(--line);
       background: var(--white);
       padding: 16px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
     }
 
     .catalog-page-image {
       display: block;
-      width: 100%;
+      width: auto;
+      max-width: 100%;
       height: auto;
+      max-height: 100%;
       background: var(--white);
+      object-fit: contain;
     }
 
     .catalog-pager {
@@ -488,6 +496,8 @@
       }
 
       .catalog-image-wrap {
+        height: 68vh;
+        min-height: 420px;
         padding: 8px;
       }
 
