@@ -526,7 +526,7 @@
           </div>
           <div class="hero-actions">
             <a class="button button-accent" href="#catalog">ブラウザで資料を見る</a>
-            <a class="button button-secondary" href="資料請求/waseda-nokotsudo-brochure.pdf" download>PDFをダウンロード</a>
+            <a class="button button-secondary" href="assets/waseda-nokotsudo-brochure.pdf" download>PDFをダウンロード</a>
           </div>
           <p class="hero-note">※PDFの閲覧のみで個人情報の入力は不要です。</p>
         </div>
@@ -544,18 +544,18 @@
           <div class="pdf-shell">
             <div class="pdf-toolbar">
               <span>WEBカタログ表示</span>
-              <span>6ページ / 約7.5MB</span>
+              <span>7ページ / 約5.2MB</span>
             </div>
             <div class="catalog-image-wrap">
               <img
                 id="catalogPageImage"
                 class="catalog-page-image"
-                src="資料請求/web_catalog_pages/page-01.png"
+                src="assets/web_catalog_pages/page-01.png"
                 alt="早稲田納骨堂 電子版資料 1ページ目">
             </div>
             <div class="catalog-pager" aria-label="電子版資料のページ送り">
               <button class="pager-button" id="prevPage" type="button">前のページ</button>
-              <span class="page-indicator"><span id="currentPage">1</span> / 6</span>
+              <span class="page-indicator"><span id="currentPage">1</span> / 7</span>
               <button class="pager-button" id="nextPage" type="button">次のページ</button>
             </div>
           </div>
@@ -566,8 +566,8 @@
               通信環境によって表示に時間がかかる場合があります。見づらい場合はPDFを直接開いてください。
             </p>
             <div class="side-actions">
-              <a class="button button-primary" href="資料請求/waseda-nokotsudo-brochure.pdf" target="_blank" rel="noopener">PDFをブラウザで開く</a>
-              <a class="button button-secondary" href="資料請求/waseda-nokotsudo-brochure.pdf" download>PDFをダウンロード</a>
+              <a class="button button-primary" href="assets/waseda-nokotsudo-brochure.pdf" target="_blank" rel="noopener">PDFをブラウザで開く</a>
+              <a class="button button-secondary" href="assets/waseda-nokotsudo-brochure.pdf" download>PDFをダウンロード</a>
               <a class="button button-accent" href="#">見学予約をする</a>
             </div>
             <ul class="check-list">
@@ -671,7 +671,7 @@
   </footer>
 
   <script>
-    const catalogTotalPages = 6;
+    const catalogTotalPages = 7;
     let catalogCurrentPage = 1;
     const catalogImage = document.getElementById("catalogPageImage");
     const currentPageText = document.getElementById("currentPage");
@@ -681,7 +681,7 @@
     function updateCatalogPage(page) {
       catalogCurrentPage = Math.min(Math.max(page, 1), catalogTotalPages);
       const padded = String(catalogCurrentPage).padStart(2, "0");
-      catalogImage.src = "資料請求/web_catalog_pages/page-" + padded + ".png";
+      catalogImage.src = "assets/web_catalog_pages/page-" + padded + ".png";
       catalogImage.alt = "早稲田納骨堂 電子版資料 " + catalogCurrentPage + "ページ目";
       currentPageText.textContent = catalogCurrentPage;
       prevPageButton.disabled = catalogCurrentPage === 1;
