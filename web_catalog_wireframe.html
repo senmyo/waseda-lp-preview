@@ -218,12 +218,57 @@
       font-size: 13px;
     }
 
-    .pdf-frame {
+    .catalog-image-wrap {
       width: 100%;
-      min-height: 720px;
       border: 1px solid var(--line);
       background: var(--white);
+      padding: 16px;
+    }
+
+    .catalog-page-image {
       display: block;
+      width: 100%;
+      height: auto;
+      background: var(--white);
+    }
+
+    .catalog-pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pager-button {
+      min-height: 42px;
+      padding: 10px 18px;
+      border: 1px solid var(--brand-dark);
+      background: var(--white);
+      color: var(--brand-dark);
+      font-family: "Noto Serif JP", "NotoSerifJP-Medium", "Yu Mincho", serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      cursor: pointer;
+    }
+
+    .pager-button:hover {
+      background: #fbfafa;
+    }
+
+    .pager-button:disabled {
+      opacity: .38;
+      cursor: default;
+    }
+
+    .page-indicator {
+      min-width: 88px;
+      text-align: center;
+      color: var(--muted);
+      font-family: "Noto Serif JP", "NotoSerifJP-Medium", "Yu Mincho", serif;
+      font-size: 15px;
     }
 
     .side-panel {
@@ -442,8 +487,8 @@
         grid-template-columns: 1fr;
       }
 
-      .pdf-frame {
-        min-height: 420px;
+      .catalog-image-wrap {
+        padding: 8px;
       }
 
       section {
@@ -498,14 +543,21 @@
         <div class="catalog-viewer">
           <div class="pdf-shell">
             <div class="pdf-toolbar">
-              <span>PDF表示エリア</span>
+              <span>WEBカタログ表示</span>
               <span>6ページ / 約7.5MB</span>
             </div>
-            <iframe
-              class="pdf-frame"
-              src="資料請求/waseda-nokotsudo-brochure.pdf"
-              title="早稲田納骨堂 電子版資料">
-            </iframe>
+            <div class="catalog-image-wrap">
+              <img
+                id="catalogPageImage"
+                class="catalog-page-image"
+                src="資料請求/web_catalog_pages/page-01.png"
+                alt="早稲田納骨堂 電子版資料 1ページ目">
+            </div>
+            <div class="catalog-pager" aria-label="電子版資料のページ送り">
+              <button class="pager-button" id="prevPage" type="button">前のページ</button>
+              <span class="page-indicator"><span id="currentPage">1</span> / 6</span>
+              <button class="pager-button" id="nextPage" type="button">次のページ</button>
+            </div>
           </div>
 
           <aside class="side-panel" id="download">
@@ -617,6 +669,29 @@
   <footer class="site-footer">
     Copyright© 早稲田納骨堂 東京都新宿区早稲田町77番地
   </footer>
+
+  <script>
+    const catalogTotalPages = 6;
+    let catalogCurrentPage = 1;
+    const catalogImage = document.getElementById("catalogPageImage");
+    const currentPageText = document.getElementById("currentPage");
+    const prevPageButton = document.getElementById("prevPage");
+    const nextPageButton = document.getElementById("nextPage");
+
+    function updateCatalogPage(page) {
+      catalogCurrentPage = Math.min(Math.max(page, 1), catalogTotalPages);
+      const padded = String(catalogCurrentPage).padStart(2, "0");
+      catalogImage.src = "資料請求/web_catalog_pages/page-" + padded + ".png";
+      catalogImage.alt = "早稲田納骨堂 電子版資料 " + catalogCurrentPage + "ページ目";
+      currentPageText.textContent = catalogCurrentPage;
+      prevPageButton.disabled = catalogCurrentPage === 1;
+      nextPageButton.disabled = catalogCurrentPage === catalogTotalPages;
+    }
+
+    prevPageButton.addEventListener("click", () => updateCatalogPage(catalogCurrentPage - 1));
+    nextPageButton.addEventListener("click", () => updateCatalogPage(catalogCurrentPage + 1));
+    updateCatalogPage(1);
+  </script>
 </body>
 
 </html>
