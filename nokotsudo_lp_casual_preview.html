@@ -780,20 +780,18 @@
 
     .voice-cutout {
       flex: 0 0 auto;
-      height: 88px;
-      display: block;
-      background-repeat: no-repeat;
-      background-size: auto 116px;
+      width: 82px;
+      height: 94px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    .voice-cutout--left {
-      width: 98px;
-      background-position: left bottom;
-    }
-
-    .voice-cutout--right {
-      width: 108px;
-      background-position: right bottom;
+    .voice-cutout img {
+      width: auto;
+      height: 94px;
+      max-width: none;
     }
 
     .voice-card h3 {
@@ -1054,7 +1052,38 @@
 
     .site-header {
       border-bottom: 0;
+      position: sticky;
+      top: 0;
+      z-index: 30;
       box-shadow: 0 6px 24px rgba(58, 58, 58, .08);
+    }
+
+    .header-inner {
+      min-height: 64px;
+      justify-content: flex-start;
+      gap: 18px;
+    }
+
+    .site-logo {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .header-actions {
+      flex: 0 0 auto;
+      width: auto;
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .header-actions .button {
+      min-width: 88px;
+      min-height: 40px;
+      width: auto;
+      padding: 8px 14px;
+      font-size: 13px;
+      white-space: nowrap;
     }
 
     .button {
@@ -1244,6 +1273,11 @@
       background: #fff9f1;
     }
 
+    .comparison-table td:nth-child(2)::before,
+    .comparison-table td:nth-child(3)::before {
+      display: none;
+    }
+
     .temple-grid .placeholder {
       min-height: 320px;
     }
@@ -1269,6 +1303,42 @@
     }
 
     @media (max-width: 720px) {
+      .site-header {
+        position: sticky;
+      }
+
+      .header-inner {
+        min-height: 58px;
+        padding: 8px 0;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .site-logo__sub {
+        font-size: 10px;
+      }
+
+      .site-logo__main {
+        font-size: 20px;
+        line-height: 1.25;
+      }
+
+      .header-actions {
+        width: auto;
+        display: flex;
+        grid-template-columns: none;
+        gap: 6px;
+      }
+
+      .header-actions .button {
+        min-width: 74px;
+        min-height: 36px;
+        width: auto;
+        padding: 7px 10px;
+        font-size: 12px;
+      }
+
       .hero-copy {
         padding: 24px;
       }
@@ -1279,6 +1349,79 @@
 
       .section-heading {
         font-size: 25px;
+      }
+
+      .comparison-wrap {
+        overflow: visible;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .comparison-table {
+        min-width: 0;
+        display: block;
+      }
+
+      .comparison-table thead {
+        display: none;
+      }
+
+      .comparison-table tbody,
+      .comparison-table tr,
+      .comparison-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .comparison-table tr {
+        margin-bottom: 16px;
+        border: 1px solid #eadcc9;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 10px 28px rgba(58, 58, 58, .05);
+        overflow: hidden;
+      }
+
+      .comparison-table td {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 14px 16px;
+      }
+
+      .comparison-table td:first-child {
+        background: #f6efe7;
+        color: var(--ink);
+        font-family: "Noto Serif JP", "Yu Mincho", serif;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .comparison-table td:nth-child(2),
+      .comparison-table td:nth-child(3) {
+        font-size: 14px;
+      }
+
+      .comparison-table td:nth-child(2)::before,
+      .comparison-table td:nth-child(3)::before {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .comparison-table td:nth-child(2)::before {
+        content: "一般的な都心の納骨堂";
+      }
+
+      .comparison-table td:nth-child(3)::before {
+        content: "早稲田納骨堂";
+        color: var(--enji);
+      }
+
+      .comparison-table td:last-child {
+        border-bottom: 0;
       }
     }
   </style>
@@ -1327,7 +1470,7 @@
 
     <section class="section problem">
       <div class="container">
-        <p class="section-kicker">こんなお悩み</p>
+        <p class="section-kicker">WORRIES</p>
         <h2 class="section-heading">お墓選びで、こんなお悩みはありませんか？</h2>
         <div class="problem-grid">
           <ul class="problem-list">
@@ -1350,7 +1493,7 @@
 
     <section class="section section--soft">
       <div class="container">
-        <p class="section-kicker">選ばれる理由</p>
+        <p class="section-kicker">REASONS</p>
         <h2 class="section-heading">早稲田納骨堂が選ばれる3つの理由</h2>
         <div class="reason-list">
           <article class="reason-item">
@@ -1401,7 +1544,7 @@
 
     <section class="section">
       <div class="container">
-        <p class="section-kicker">施設紹介</p>
+        <p class="section-kicker">FACILITY</p>
         <h2 class="section-heading">施設のご紹介</h2>
         <p class="section-lead">
           完全個室の参拝室を中心に、ご家族だけで落ち着いてお参りできる環境を整えています。
@@ -1476,7 +1619,7 @@
 
     <section class="section section--soft">
       <div class="container">
-        <p class="section-kicker">料金プラン</p>
+        <p class="section-kicker">PLAN</p>
         <h2 class="section-heading">費用・プラン</h2>
         <div class="plan-intro">
           <div>
@@ -1521,7 +1664,7 @@
 
     <section class="section">
       <div class="container">
-        <p class="section-kicker">比較</p>
+        <p class="section-kicker">COMPARISON</p>
         <h2 class="section-heading">他の納骨堂・お墓との比較</h2>
         <p class="section-lead">
           一般的な都心の納骨堂と比較した、早稲田納骨堂ならではの強みをご覧ください。
@@ -1569,7 +1712,7 @@
 
     <section class="section section--soft">
       <div class="container">
-        <p class="section-kicker">運営寺院</p>
+        <p class="section-kicker">TEMPLE</p>
         <h2 class="section-heading">運営寺院「龍善寺」のご紹介</h2>
         <div class="temple-grid">
           <div class="placeholder">写真：龍善寺 本堂 または 住職</div>
@@ -1603,26 +1746,32 @@
 
     <section class="section">
       <div class="container">
-        <p class="section-kicker">利用者の声</p>
+        <p class="section-kicker">VOICE</p>
         <h2 class="section-heading">ご契約者の声</h2>
         <div class="voice-grid">
           <article class="voice-card">
             <div class="voice-profile">
-              <span class="voice-cutout voice-cutout--left" style="background-image: url('https://www.waseda-ryuzenji.or.jp/petlp/assets/img/ph_testimonial_1.png');" aria-hidden="true"></span>
+              <span class="voice-cutout" aria-hidden="true">
+                <img src="assets/testimonial_people/testimonial_person_1.png" alt="">
+              </span>
               <h3>東京都 M様</h3>
             </div>
             <p>「納骨堂の設備が整っており、管理システムもわかりやすく、また地理的に利便性が良い点で決めました。ご丁寧にご説明いただいた点も印象的でした。」</p>
           </article>
           <article class="voice-card">
             <div class="voice-profile">
-              <span class="voice-cutout voice-cutout--right" style="background-image: url('https://www.waseda-ryuzenji.or.jp/petlp/assets/img/ph_testimonial_2.png');" aria-hidden="true"></span>
+              <span class="voice-cutout" aria-hidden="true">
+                <img src="assets/testimonial_people/testimonial_person_2.png" alt="">
+              </span>
               <h3>東京都板橋区 M様</h3>
             </div>
             <p>「定年時代の広告を見て視察に参りました。説明も明確で費用もリーズナブルと思い、お世話になることを決めました。」</p>
           </article>
           <article class="voice-card">
             <div class="voice-profile">
-              <span class="voice-cutout voice-cutout--left" style="background-image: url('https://www.waseda-ryuzenji.or.jp/petlp/assets/img/ph_testimonial_3.png');" aria-hidden="true"></span>
+              <span class="voice-cutout" aria-hidden="true">
+                <img src="assets/testimonial_people/testimonial_person_3.png" alt="">
+              </span>
               <h3>東京都 N様</h3>
             </div>
             <p>「アクセスが便利なこと、見学時の印象がよかったこと、既契約者の知人から話を聞いてよいと思った点が決め手でした。」</p>
@@ -1633,7 +1782,7 @@
 
     <section class="section section--soft">
       <div class="container">
-        <p class="section-kicker">よくある質問</p>
+        <p class="section-kicker">FAQ</p>
         <h2 class="section-heading">よくあるご質問</h2>
         <div class="faq-list">
           <div class="faq-item">
