@@ -370,14 +370,12 @@
     }
 
     .problem-list li::before {
-      content: "";
+      content: "✓";
       position: absolute;
-      top: 28px;
+      top: 18px;
       left: 6px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
+      color: var(--green);
+      font-weight: 700;
     }
 
     .solution-box {
@@ -628,6 +626,15 @@
       font-size: 13px;
     }
 
+    .plan-extra-note {
+      width: 100%;
+      margin: 0 0 10px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
     .check-list {
       margin: 20px 0 0;
       padding: 0;
@@ -644,14 +651,12 @@
     }
 
     .check-list li::before {
-      content: "";
+      content: "✔";
       position: absolute;
-      top: 10px;
+      top: 0;
       left: 0;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
+      color: var(--green);
+      font-weight: 700;
     }
 
     .comparison-wrap {
@@ -1189,8 +1194,8 @@
       box-shadow: 0 8px 22px rgba(58, 58, 58, .04);
     }
 
-    .problem-list li::before {
-      top: 28px;
+      .problem-list li::before {
+      top: 17px;
       left: 20px;
     }
 
@@ -1431,11 +1436,9 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="site-logo" href="#">
-        <span class="site-logo__sub">東京の永代供養付き納骨堂</span>
         <span class="site-logo__main">早稲田納骨堂</span>
       </a>
       <div class="header-actions">
-        <a class="header-phone" href="tel:0332094709">03-3209-4709</a>
         <a class="button button--document" href="https://wasedanokotsudo.jp/contact/">資料請求</a>
         <a class="button button--tour" href="https://wasedanokotsudo.jp/reservation/">見学予約</a>
       </div>
@@ -1444,20 +1447,20 @@
 
   <main>
     <section class="hero">
-      <div class="placeholder">メインビジュアル画像<br>明るい個室参拝室 ＋ 大型モニターに故人の写真が映る様子</div>
+      <div class="placeholder">[ メインビジュアル画像：明るい個室参拝室 ＋ 大型モニターに故人の写真が映る様子 ]</div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="hero-label">早稲田駅から徒歩2分の完全個室納骨堂</p>
-          <h1>早稲田納骨堂</h1>
-          <p class="hero-catch">お墓のこと、<br>まだ決めきれていなくても大丈夫。</p>
+          <h1>
+            都心で叶う、<br class="sp-br">ご家族だけの静かなお参り。<br>早稲田駅から徒歩2分の<br class="sp-br">完全個室納骨堂
+          </h1>
           <p class="hero-lead">
-            早稲田駅から徒歩2分。家族だけで静かにお参りできる、完全個室の納骨堂です。
-            まずは雰囲気を見て、ご家族のペースでゆっくりご検討ください。
+            販売会社を通さない直接運営だから<br class="sp-br">実現できた、安心の価格と管理体制。<br>
+            家代々使えるプランが<strong>78万円</strong>から。
           </p>
           <ul class="hero-points" aria-label="早稲田納骨堂の特徴">
-            <li>駅から徒歩2分</li>
-            <li>全室完全個室</li>
-            <li>中間マージンなし</li>
+            <li>駅から<br>徒歩2分</li>
+            <li>全室<br>完全個室</li>
+            <li>中間マージン<br>なし</li>
           </ul>
           <div class="hero-actions">
             <a class="button button--tour" href="https://wasedanokotsudo.jp/reservation/">見学予約はこちら</a>
@@ -1471,7 +1474,7 @@
     <section class="section problem">
       <div class="container">
         <p class="section-kicker">WORRIES</p>
-        <h2 class="section-heading">お墓選びで、こんなお悩みはありませんか？</h2>
+        <h2 class="section-heading">お墓選びで、<br class="sp-br">こんなお悩みはありませんか？</h2>
         <div class="problem-grid">
           <ul class="problem-list">
             <li>「お墓が遠方で、なかなかお参りに行けない…」</li>
@@ -1481,10 +1484,9 @@
             <li>「特定の宗派じゃないと入れないのでは…」</li>
           </ul>
           <div class="solution-box">
-            <h3>そのお悩み、<br>早稲田納骨堂が解決します。</h3>
+            <h3>そのお悩み、<br class="sp-br">早稲田納骨堂が解決します。</h3>
             <p>
-              早稲田納骨堂では、宗派不問・無宗教の方もご利用いただけるプランをご用意しています。
-              ご家族のペースで、静かに、安心して検討いただける納骨堂です。
+              宗派不問・無宗教の方も<br class="sp-br">ご利用いただけるプランをご用意しています。
             </p>
           </div>
         </div>
@@ -1498,11 +1500,10 @@
         <div class="reason-list">
           <article class="reason-item">
             <div class="reason-media">
-              <div class="placeholder">写真：駅出口から見える外観</div>
+              <div class="placeholder">[ 写真：駅出口から見える外観 ]</div>
             </div>
             <div class="reason-copy">
-              <span class="reason-number">1</span>
-              <h3>駅徒歩2分、都心でいつでも会える</h3>
+              <h3>① 駅徒歩2分、都心でいつでも会える</h3>
               <p>
                 東京メトロ東西線「早稲田」駅から約100m、徒歩2分。
                 思い立った時にいつでもお参りいただけます。周辺は大学や公園に囲まれた、落ち着いた文教エリアです。
@@ -1512,11 +1513,10 @@
 
           <article class="reason-item">
             <div class="reason-media">
-              <div class="placeholder">写真：個室で家族がモニターを見ている様子</div>
+              <div class="placeholder">[ 写真：個室で家族がモニターを見ている様子 ]</div>
             </div>
             <div class="reason-copy">
-              <span class="reason-number">2</span>
-              <h3>周りを気にしない「完全個室」</h3>
+              <h3>② 周りを気にしない「完全個室」</h3>
               <p>
                 参拝室はプライベートな完全個室。大型モニターで思い出の写真や音楽を流しながら、
                 ご家族だけの空間でゆっくり故人との時間をお過ごしいただけます。
@@ -1527,11 +1527,10 @@
 
           <article class="reason-item">
             <div class="reason-media">
-              <div class="placeholder">写真：明るいロビー or 受付の様子</div>
+              <div class="placeholder">[ 写真：明るいロビー or 受付の様子 ]</div>
             </div>
             <div class="reason-copy">
-              <span class="reason-number">3</span>
-              <h3>中間マージンなしの安心価格</h3>
+              <h3>③ 中間マージンなしの安心価格</h3>
               <p>
                 販売会社を通さず、運営元が直接ご案内。中間マージンがないから実現できた納得の価格です。
                 見学後の営業電話・メールも一切ありません。
@@ -1546,61 +1545,53 @@
       <div class="container">
         <p class="section-kicker">FACILITY</p>
         <h2 class="section-heading">施設のご紹介</h2>
-        <p class="section-lead">
-          完全個室の参拝室を中心に、ご家族だけで落ち着いてお参りできる環境を整えています。
-        </p>
         <div class="facility-slider" aria-label="施設写真スライダー">
           <button class="facility-arrow facility-arrow--prev" type="button" aria-label="前の施設写真へ" data-facility-prev>&#10094;</button>
           <button class="facility-arrow facility-arrow--next" type="button" aria-label="次の施設写真へ" data-facility-next>&#10095;</button>
           <div class="facility-window">
             <div class="facility-track" id="facilityTrack">
               <article class="facility-slide">
-                <div class="placeholder">写真：参拝室の内観</div>
+                <div class="placeholder">[ 写真：参拝室の内観 ]</div>
                 <div class="facility-caption">
                   <h3>参拝室（全8室・完全個室）</h3>
                   <p>
-                    大型モニターで故人の写真や動画、音楽を流しながら、
-                    ご家族だけの空間でゆっくりお参りいただけます。自動搬送式ではなく、
-                    ご要望があればご遺骨は手でお運びします。
+                    大型モニターで故人の写真や動画、音楽を流しながら、ご家族だけの空間でゆっくりお参りいただけます。ご遺骨は自動搬送ではなく、手で運んでお迎えできます。
                   </p>
                 </div>
               </article>
               <article class="facility-slide">
-                <div class="placeholder">写真：モニターに遺影が映っている様子</div>
+                <div class="placeholder">[ 写真：モニターに遺影が映っている様子 ]</div>
                 <div class="facility-caption">
                   <h3>大型モニター</h3>
                   <p>
-                    タッチパネル操作で、思い出の写真や動画をモニターに映し出せます。
-                    ビデオ登録で故人の声を聞くこともできます。
+                    タッチパネル操作で、思い出の写真や動画をモニターに映し出せます。ビデオ登録で故人の声を聞くことも。
                   </p>
                 </div>
               </article>
               <article class="facility-slide">
-                <div class="placeholder">写真：明るいロビー・待合室</div>
+                <div class="placeholder">[ 写真：明るいロビー・待合室 ]</div>
                 <div class="facility-caption">
                   <h3>ロビー・待合室</h3>
                   <p>
-                    白を基調とした明るく清潔感のある空間。お茶のご用意もございます。
-                    お参り後もゆっくりお過ごしください。
+                    白を基調とした明るく清潔感のある空間。お茶のご用意もございます。お参り後もゆっくりお過ごしください。
                   </p>
                 </div>
               </article>
               <article class="facility-slide">
-                <div class="placeholder">写真：ロビーの花立て・お花</div>
+                <div class="placeholder">[ 写真：ロビーの花立て・お花 ]</div>
                 <div class="facility-caption">
                   <h3>お花のお供え</h3>
                   <p>
-                    故人がお好きだったお花を自由にお供えいただけます。
-                    屋内なので長い間きれいに咲いてくれます。
+                    故人がお好きだったお花を自由にお供えいただけます。屋内なので長い間きれいに咲いてくれます。
                   </p>
                 </div>
               </article>
               <article class="facility-slide">
-                <div class="placeholder">写真：専用駐車場</div>
+                <div class="placeholder">[ 写真：専用駐車場 ]</div>
                 <div class="facility-caption">
                   <h3>専用駐車場</h3>
                   <p>
-                    早稲田通り沿いに専用駐車場を完備。車いすの方用の駐車場も境内にございます。
+                    早稲田通り沿いに専用駐車場を完備（最大12台）。車いすの方用の駐車場も境内にございます。
                   </p>
                 </div>
               </article>
@@ -1623,10 +1614,9 @@
         <h2 class="section-heading">費用・プラン</h2>
         <div class="plan-intro">
           <div>
-            <h3>檀家にならなくても、<br>ご利用いただけます。</h3>
+            <h3>檀家にならなくても<br>ご利用いただけます。</h3>
             <p>
               宗派を問わず、どなたでもお選びいただける契約形式をご用意しています。
-              詳細は見学時にご説明いたします。
             </p>
           </div>
           <div class="plan-grid">
@@ -1657,6 +1647,7 @@
           </div>
         </div>
         <div class="hero-actions" style="justify-content: center;">
+          <p class="plan-extra-note">※ 上記のほか「檀家プラン」もございます。詳しくは見学時にご説明いたします。</p>
           <a class="button button--tour" href="https://wasedanokotsudo.jp/reservation/">見学予約はこちら</a>
         </div>
       </div>
@@ -1682,27 +1673,27 @@
               <tr>
                 <td><strong>家族用プランの費用</strong></td>
                 <td>家族用は初期費用100〜150万円前後が多く、都心部では200万円を超えるプランもある</td>
-                <td class="waseda"><strong>家代々で使えるプランが78万円</strong><br>都心エリアの中でも、家族で持ちやすい価格設定</td>
+                <td class="waseda"><strong>◎ 家代々で使えるプランが78万円</strong><br>都心エリアの中でも、家族で持ちやすい価格設定</td>
               </tr>
               <tr>
                 <td><strong>宗派のしばり</strong></td>
                 <td>「宗教不問」としつつ、説明が抽象的で、自分が対象か分かりにくいことも</td>
-                <td class="waseda"><strong>宗派不問・無宗教の方も対象のプランを明記</strong><br>檀家・信徒・一般から選べて、ニーズに合ったプランを選びやすい</td>
+                <td class="waseda"><strong>◎ 宗派不問・無宗教の方も対象のプランを明記</strong><br>檀家・信徒・一般から選べて、ニーズに合ったプランを選びやすい</td>
               </tr>
               <tr>
                 <td><strong>参拝空間</strong></td>
                 <td>参拝ホール型や半個室が中心で、周りの視線・物音が気になりやすい</td>
-                <td class="waseda"><strong>全室完全個室の参拝室</strong><br>大型モニターで写真や音楽を流しながら、家族だけで静かにお参りできます</td>
+                <td class="waseda"><strong>◎ 全室完全個室の参拝室</strong><br>大型モニターで写真や音楽を流しながら、家族だけで静かにお参りできる。ご遺骨を手で運んでお迎えできる点も、自動搬送式にはない特徴です</td>
               </tr>
               <tr>
                 <td><strong>アクセス</strong></td>
                 <td>駅近だが、繁華街に近く人通りや車通りが多い場所も少なくない</td>
-                <td class="waseda"><strong>東京メトロ「早稲田」駅 徒歩2分</strong><br>大学や公園がある落ち着いた文教エリア。専用駐車場完備</td>
+                <td class="waseda"><strong>◎ 東京メトロ「早稲田」駅 徒歩2分（駅から約100m）</strong><br>大学や公園がある落ち着いた文教エリア。専用駐車場完備（最大12台）</td>
               </tr>
               <tr>
                 <td><strong>見学後の対応</strong></td>
                 <td>見学後の電話・メールでの営業があり、急かされる印象を持つ方も</td>
-                <td class="waseda"><strong>営業電話・メール一切なし</strong><br>販売会社ではなく運営元が直接対応。ご家族のペースでじっくり検討できます</td>
+                <td class="waseda"><strong>◎ 営業電話・メール一切なし</strong><br>販売会社ではなく運営元が直接対応。ご家族のペースでじっくり検討できる</td>
               </tr>
             </tbody>
           </table>
@@ -1715,12 +1706,12 @@
         <p class="section-kicker">TEMPLE</p>
         <h2 class="section-heading">運営寺院「龍善寺」のご紹介</h2>
         <div class="temple-grid">
-          <div class="placeholder">写真：龍善寺 本堂 または 住職</div>
+          <div class="placeholder">[ 写真：龍善寺 本堂 または 住職 ]</div>
           <div class="temple-copy">
             <h3>浄土真宗（真宗大谷派 本山 京都東本願寺）龍善寺</h3>
             <p>
-              早稲田納骨堂は、収益目的の販売会社などを通さず、歴史ある龍善寺が直接募集・運営しております。
-              そのため、適正な価格で永代にわたる手厚いご供養をお約束いたします。
+              早稲田納骨堂は、収益目的の販売会社などを通さず、歴史ある龍善寺が直接募集・運営しております。<br>
+              そのため、適正な価格で永代にわたる手厚いご供養をお約束いたします。お寺が直接管理しているからこその「安心感」が、多くの方に選ばれている理由です。
             </p>
             <ul class="check-list">
               <li>資料請求・見学後の営業電話・メールは一切いたしません</li>
@@ -1736,8 +1727,8 @@
             <p>
               納骨堂選びは、大切な方をお預けになる場所を決めることです。
               と同時に、ご自身が、今後永く訪れる場所を決めることでもあります。
-              だからこそ、急いでお決めになる必要はありません。
-              まずはお気軽に見学にいらしていただき、雰囲気や設備をご自身の目でお確かめください。
+              だからこそ、急いでお決めになる必要はありません。<br><br>
+              まずはお気軽に見学にいらしていただき、雰囲気や設備をご自身の目でお確かめください。ご家族で何度でもお越しいただいて構いません。ゆっくりご検討いただいたうえで、ご縁をいただければ幸いです。
             </p>
           </div>
         </div>
@@ -1787,23 +1778,38 @@
         <div class="faq-list">
           <div class="faq-item">
             <p class="faq-q">Q. 檀家にならないと利用できませんか？</p>
-            <p class="faq-a">いいえ、檀家になる必要はありません。早稲田納骨堂には「檀家」「信徒」「一般」の3つの契約形式があり、他宗派の方・無宗教の方もご利用いただけるプランをご用意しています。</p>
+            <p class="faq-a">
+              いいえ、檀家になる必要はありません。早稲田納骨堂には「檀家」「信徒」「一般」の3つの契約形式があり、
+              他宗派の方・無宗教の方もご利用いただける「一般」プランのほか、今後の葬儀・法要は龍善寺にご依頼いただきつつ費用を抑えられ、寄付の割り当てのない「信徒」プランもご用意しています。詳しくはお問い合わせください。
+            </p>
           </div>
           <div class="faq-item">
             <p class="faq-q">Q. 永代供養の費用は別にかかりますか？</p>
-            <p class="faq-a">早稲田納骨堂は永代供養が付いた納骨堂ですので、別途永代供養墓のご契約は不要です。共同埋葬時の費用のみ別途ご負担いただきます。</p>
+            <p class="faq-a">
+              早稲田納骨堂は永代供養が付いた納骨堂ですので、別途永代供養墓のご契約は不要です。お預かりしたご遺骨は、将来的に龍善寺永代供養墓へ共同埋葬し、永代にわたりご供養いたします（共同埋葬時の費用のみ別途ご負担いただきます）。<br>
+              なお、年間管理費は信徒プラン 11,900円〜、一般プラン 15,000円〜です。このほか、映像登録費・骨壺処分費・納骨時費用・名義変更費用などがございます。詳しくは見学時またはお問い合わせ時にご説明いたします。
+            </p>
           </div>
           <div class="faq-item">
             <p class="faq-q">Q. 生前に申し込めますか？管理費はいつからかかりますか？</p>
-            <p class="faq-a">はい、生前のお申込みも承っております。生前にご契約いただいた場合でも、実際にご納骨されるまでは管理費はかからず、納骨後からのご負担となります。</p>
+            <p class="faq-a">
+              はい、生前のお申込みも承っております。生前にご契約いただいた場合でも、
+              実際にご納骨されるまでは管理費はかからず、納骨後からのご負担となります。
+            </p>
           </div>
           <div class="faq-item">
             <p class="faq-q">Q. 見学後にしつこい営業はありませんか？</p>
-            <p class="faq-a">一切ございません。資料請求・見学後に営業電話やメールを行わないことを明言しております。ご家族のペースで、じっくりご検討ください。</p>
+            <p class="faq-a">
+              一切ございません。資料請求・見学後に営業電話やメールを行わないことを明言しております。
+              ご家族のペースで、じっくりご検討ください。
+            </p>
           </div>
           <div class="faq-item">
             <p class="faq-q">Q. 宗派が違う、または無宗教ですが利用できますか？</p>
-            <p class="faq-a">はい、ご利用いただけます。「一般」プランは他宗派・無宗教の方を対象としており、宗教的な義務は一切ありません。</p>
+            <p class="faq-a">
+              はい、ご利用いただけます。「一般」プランは他宗派・無宗教の方を対象としており、
+              宗教的な義務（葬儀・法要や行事参加の強制、寄付の割り当て等）は一切ありません。もちろん、ご要望があれば龍善寺に葬儀・法要をご依頼いただくことや、行事へのご参加も可能です。
+            </p>
           </div>
         </div>
       </div>
@@ -1811,9 +1817,9 @@
 
     <section class="section final-cta">
       <div class="container">
-        <h2 class="section-heading">まずはお気軽にお問い合わせください</h2>
+        <h2 class="section-heading">まずはお気軽に<br>お問い合わせください</h2>
         <p class="section-lead">
-          見学予約・資料請求いずれも無料です。見学後の営業電話・メールは一切いたしません。
+          見学予約・資料請求いずれも無料です。<br>見学後の営業電話・メールは<br>一切いたしません。
         </p>
         <div class="hero-actions" style="justify-content: center;">
           <a class="button button--tour" href="https://wasedanokotsudo.jp/reservation/">見学予約はこちら</a>
