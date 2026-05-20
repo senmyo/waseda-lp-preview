@@ -749,8 +749,50 @@
       padding: 24px;
     }
 
+    .voice-profile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .voice-avatar {
+      position: relative;
+      flex: 0 0 auto;
+      width: 54px;
+      height: 54px;
+      border: 1px solid #dcc7a6;
+      border-radius: 50%;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .voice-avatar::before {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #b8ada1;
+      transform: translateX(-50%);
+    }
+
+    .voice-avatar::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 9px;
+      width: 34px;
+      height: 18px;
+      border-radius: 18px 18px 8px 8px;
+      background: #b8ada1;
+      transform: translateX(-50%);
+    }
+
     .voice-card h3 {
-      margin: 0 0 12px;
+      margin: 0;
       color: var(--ink);
       font-family: "Noto Serif JP", "Yu Mincho", serif;
       font-size: 18px;
@@ -1300,15 +1342,24 @@
         <h2 class="section-heading">ご契約者の声</h2>
         <div class="voice-grid">
           <article class="voice-card">
-            <h3>東京都 M様</h3>
+            <div class="voice-profile">
+              <span class="voice-avatar" aria-hidden="true"></span>
+              <h3>東京都 M様</h3>
+            </div>
             <p>「納骨堂の設備が整っており、管理システムもわかりやすく、また地理的に利便性が良い点で決めました。ご丁寧にご説明いただいた点も印象的でした。」</p>
           </article>
           <article class="voice-card">
-            <h3>東京都板橋区 M様</h3>
+            <div class="voice-profile">
+              <span class="voice-avatar" aria-hidden="true"></span>
+              <h3>東京都板橋区 M様</h3>
+            </div>
             <p>「定年時代の広告を見て視察に参りました。説明も明確で費用もリーズナブルと思い、お世話になることを決めました。」</p>
           </article>
           <article class="voice-card">
-            <h3>東京都 N様</h3>
+            <div class="voice-profile">
+              <span class="voice-avatar" aria-hidden="true"></span>
+              <h3>東京都 N様</h3>
+            </div>
             <p>「アクセスが便利なこと、見学時の印象がよかったこと、既契約者の知人から話を聞いてよいと思った点が決め手でした。」</p>
           </article>
         </div>
